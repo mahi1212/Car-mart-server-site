@@ -51,7 +51,6 @@ async function run() {
     app.get('/review', async (req, res) => {
       const cursor = reviewCollection.find({})
       const review = await cursor.toArray()
-      console.log('hitted api review')
       res.json(review) //not res.send
     })
 
@@ -122,6 +121,7 @@ async function run() {
       const result = await userCollection.updateOne(filter, updateDoc)
       res.json(result)
     })
+    
     // Check admin role
     app.get('/users/:email', async (req, res) => {
       const email = req.params.email;
