@@ -17,13 +17,13 @@ async function run() {
   try {
     await client.connect()
     console.log('Connected to Db')
-
+    // Check comment
     const database = client.db('car_mart')
     const productCollection = database.collection('products')
     const reviewCollection = database.collection('review')
     const orderCollection = database.collection('orders')
     const userCollection = database.collection('users')
-
+    
     // GET PRODUCTS
     app.get('/products', async (req, res) => {
       const cursor = productCollection.find({})
